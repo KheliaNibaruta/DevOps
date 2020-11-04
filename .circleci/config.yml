@@ -5,7 +5,7 @@ jobs:
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
       - restore_cache:
-         keys:
+         key:
            - npm-v1-dependencies-{{ checksum "yarn.lock" }}
       - save_cache:
          paths:
