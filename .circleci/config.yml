@@ -9,6 +9,6 @@ jobs:
            - npm-v1-dependencies-{{ checksum "yarn.lock" }}
       -save_cache:
         paths:
-          - ~/.cache/yarn
+          - ~/.cache/npm
          key: npm-v1-dependencies-{{ checksum "yarn.lock" }}
 
