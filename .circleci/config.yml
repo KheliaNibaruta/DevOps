@@ -4,7 +4,6 @@ jobs:
     docker: 
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
-      - checkout # check out the code in the project directory
       - restore_cache:
          keys:
            - npm-v1-dependencies-{{ checksum "yarn.lock" }}
