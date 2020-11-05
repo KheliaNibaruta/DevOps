@@ -1,14 +1,16 @@
-version: 2.1	
-jobs:
-  build:
-    docker:
-      - image: cimg/node:14.10.1
-    steps:
-      - restore_cache:
-         keys:
-           - npm-v1-dependencies-{{ checksum "yarn.lock" }}
-      - save_cache:
-         paths:
-           - ~/.cache/yarn
-         keys:
-           - npm-v1-dependencies-{{ checksum "yarn.lock" }}
+version: 2.1
+workflows:
+    build:
+        jobs:
+          build:
+            docker:
+              - image: cimg/node:14.10.1
+            steps:
+              - restore_cache:
+                 keys:
+                   - npm-v1-dependencies-{{ checksum "yarn.lock" }}
+              - save_cache:
+                 paths:
+                   - ~/.cache/yarn
+                 keys:
+                   - npm-v1-dependencies-{{ checksum "yarn.lock" }}
