@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: cimg/node:12.18
     steps:
-      - checkout:
+      - checkout
       - restore_cache:
          key:
            - npm-v1-dependencies-{{ checksum "yarn.lock" }}
