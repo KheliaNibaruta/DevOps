@@ -67,7 +67,7 @@ jobs:
                 command: yarn test:e2e
     build_docker:
         environment
-         IMAGE_NAME: 698148/my-awesome
+            IMAGE_NAME: 698148/my-awesome
         docker:
             - image: circleci/buildpack-deps:stretch
         steps:
