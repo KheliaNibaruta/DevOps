@@ -68,13 +68,13 @@ jobs:
     build_docker:
         environment
             IMAGE_NAME:698148/my-awesome-ci-expr
-        docker:
+        docker
             - image:circleci/buildpack-deps:stretch
-        steps:
+        steps
             - checkout
             - run:bash scripts/generate.sh > Dockerfile
 
-            - run:docker login -u $698148 -p $n698k148*
+            - run:docker login -u $698148 -p $DOCKER_PASSWORD*
 
             - run:docker build -t $698148/$IMAGE_NAME:app .
 
