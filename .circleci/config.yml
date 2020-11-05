@@ -68,7 +68,7 @@ jobs:
     build_docker:
         environment
             IMAGE_NAME:698148/my-awesome-ci-expr
-        docker:
+        docker
             - image: circleci/buildpack-deps:stretch
         steps:
             - checkout
