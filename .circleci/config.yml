@@ -9,6 +9,7 @@ jobs:
         - image: cimg/node:14.10.1
     steps:
         - checkout
+        - setup_remote_docker
         - restore_cache:
            key:
              - npm-v1-dependencies-{{ checksum "yarn.lock" }}
