@@ -7,8 +7,3 @@ jobs:
       - restore_cache:
           keys:
             - npm-v1-dependencies-{{ checksum "yarn.lock" }}
-      - save_cache:
-          paths:
-            - ~/.cache/yarn
-          keys:
-            - npm-v1-dependencies-{{ checksum "yarn.lock" }}
