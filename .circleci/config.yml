@@ -6,15 +6,15 @@ workflow:
 jobs:
   build:
     docker:
-        - image: cimg/node:12.18
+        - image: cimg/node:14.10.1
     steps:
         - checkout
-        - restore_cache:
-           key:
-             - npm-v1-dependencies-{{ checksum "yarn.lock" }}
-        - run: yarn global add node-gyp && yarn install
-        - save_cache:
-           paths:
-             - ~./cache/yarn
-           key:
-             - npm-v1-dependencies-{{ checksum "yarn.lock" }}
+#        - restore_cache:
+#           key:
+#             - npm-v1-dependencies-{{ checksum "yarn.lock" }}
+        - run: echo "hello world"
+#        - save_cache:
+#           paths:
+#             - ~./cache/yarn
+#           key:
+#             - npm-v1-dependencies-{{ checksum "yarn.lock" }}
